@@ -1,13 +1,13 @@
 # Standard Insertion Sort, scan linearly, find the correct position to insert
 #  Find the correct position then shift elements
 #  The time complexity is O(n^2) in the average and worst case, 
-# and O(n) in the best case (when the array is already sorted).
+# and O(n) (comparison) in the best case (when the array is already sorted).
 def insertion_sort(array):
     ar = array.copy() # Work on a copy to avoid modifying the original array
     comparisons = 0 # COMparisons
     shifts = 0 # count the shifts
 
-    for i in range(1, len(a)): # a for loop from the second element to the end
+    for i in range(1, len(ar)): # a for loop from the second element to the end
         key = ar[i]
         j = i - 1
 
@@ -28,7 +28,7 @@ def insertion_sort(array):
 # Next we will do binary search on an array, it is called
 # binary sort, for the cost breakdown,
 # the time complexity is O(n^2) for the worst case and in the best case
-# the comparison time complexities is O(n log n) and it is slower than insertion sort
+# the comparison time complexities is O(n log n) and it is faster than insertion sort
 # because of the binary search.
 
 # This is the binary search function to find the correct position to insert
@@ -101,5 +101,6 @@ def adapted_binary_insertion_sort(arr):
         last_pos = pos
 
     return a, comparisons, shifts
+
 
 

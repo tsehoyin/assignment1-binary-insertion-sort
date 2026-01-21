@@ -1,5 +1,7 @@
  Topic 15- adaptive binary/ insertion sort for COMP 359
 
+ Jack Tse
+
 Overview: 
 This project focuses on 
 insertion sort, binary sort, 
@@ -35,8 +37,6 @@ This analyzes locality between consecutive elements, and reducing comparison cou
 
 Time complexities:
 
-
-
 In insertion sort,
 
 According to our textbook
@@ -57,9 +57,8 @@ For the number of elements, it is split into 2. The comparison time complexities
 This is faster than insertion sort, in most scenarios, except when the array is already sorted. It is because the comparisons still have to be made, whereas in insertion sort, there is no need for comparisons and shifting. 
 
 The worst case scenario is O(n^2)
-The average case scenario is O(n^2),
+The average case scenario is O(n log n),
 The best case scenario is O(n log n),
-
 
 
 Lastly in our adapted binary insertion sort
@@ -72,7 +71,32 @@ The average case scenario is O(n^2),
 The best case scenario is O(0),
 
 
+
+Optimization:
+The adapted binary insertion sort improves performance by observing the insertion positions with the if-statement, and restrict the binary search, 
+improving performance
+
+
+Conclusion
+Binary insertion sort demonstrates how improving one component of an algorithm like comparisons
+does not always improve all complexity when another component like data is taken into consideration, aka when the data is already sorted.
+The adaptive variant shows that by imcorporating many elements into our designs, we can get the benefit of different algorithms. 
+
+
 Files
 sorts.py
 run_experiments.py
 README.me
+vlog1.mp4
+vlog2.mp4
+demoresults.jpg
+
+References (MLA)
+
+Levitin, Anany. *The Design and Analysis of Algorithms*. 3rd ed., Pearson, 2012.
+
+Shaffer, Clifford A. *Data Structures and Algorithm Analysis in Java*. Dover Publications, 2013,  
+people.cs.vt.edu/~shaffer/Book/JAVA3elatest.pdf.
+
+Skiena, Steven S. *The Algorithm Design Manual*. Springer-Verlag, New York, 1997,  
+www8.cs.umu.se.

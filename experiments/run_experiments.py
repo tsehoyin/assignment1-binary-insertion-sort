@@ -1,5 +1,5 @@
-import random
-import time
+import random # for generating array
+import time # for measuring time complexities
 from src.sorts import (
     insertion_sort, binary_insertion_sort, adapted_binary_insertion_sort
     )
@@ -34,12 +34,22 @@ def run_case(n, case): # Run sorting algorithms on all three cases
         elapsed = time.perf_counter() - start
 
         print(f"{name:30} "
-              f"Time: {elapsed:.6f}s  "
+              f"Time: {1e9 * elapsed / 100000 :.4f}nanoseconds(shown in class)  "
               f"Comparisons: {comps}  "
               f"Shifts: {shifts}")
 
 
-if __name__ == "__main__":
-    n = 500
-    for case in ["random", "sorted", "nearly_sorted"]:
+if __name__ == "__main__": 
+
+    # Ask user for input size n
+    while True:
+        try: # input n until valid positive integer is given
+            n = int(input("Enter array size n (positive integer): "))
+            if n <= 0:
+                raise ValueError
+            break
+        except ValueError:
+            print("Please enter a valid positive integer.")
+
+    for case in ["random", "sorted", "nearly_sorted"]: #run all cases
         run_case(n, case)
